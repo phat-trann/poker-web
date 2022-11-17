@@ -11,6 +11,8 @@
   * [ ]  Setting music and sound effect
 * Playground:
   * [ ] Table - customize color
+    * [x] Table hard color
+    * [] Customize color
   * [ ] Chair (Seated / Empty) - User information for not empty
   * [ ] User cards
   * [ ] Dealer
