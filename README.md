@@ -12,7 +12,8 @@
 * Playground:
   * [ ] Table - customize color
     * [x] Table hard color
-    * [] Customize color
+    * [x] Customize color
+    * [ ] Customize color in setting
   * [ ] Chair (Seated / Empty) - User information for not empty
   * [ ] User cards
   * [ ] Dealer

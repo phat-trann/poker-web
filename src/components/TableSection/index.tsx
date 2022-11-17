@@ -40,7 +40,9 @@ const GameSection: React.FC<{ themeColor: string }> = ({ themeColor }) => {
           y={400}
           radiusX={450}
           radiusY={325}
-          fill={themeColor}
+          fillLinearGradientStartPoint={{x: 200, y: 700}}
+          fillLinearGradientEndPoint={{x: 1000, y: 75}}
+          fillLinearGradientColorStops={[0, themeColor, 1, adjustColor(themeColor, 100)]}
         />
         <Ellipse
           x={600}
@@ -64,7 +66,7 @@ const GameSection: React.FC<{ themeColor: string }> = ({ themeColor }) => {
           fill={darkGreenHex}
           shadowColor="black"
           shadowBlur={20}
-          shadowOpacity={0.5}
+          shadowOpacity={0.3}
         />
         <Ellipse
           x={600}
@@ -74,6 +76,9 @@ const GameSection: React.FC<{ themeColor: string }> = ({ themeColor }) => {
           fill={greenHex}
           stroke={adjustColor(themeColor, 50)}
           strokeWidth={8}
+          shadowColor="black"
+          shadowBlur={20}
+          shadowOpacity={0.3}
         />
       </Layer>
     </Stage>
