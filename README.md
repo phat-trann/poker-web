@@ -10,7 +10,7 @@
   * [ ]  Sound effect
   * [ ]  Setting music and sound effect
 * Playground:
-  * [ ] Table
+  * [ ] Table - customize color
   * [ ] Chair (Seated / Empty) - User information for not empty
   * [ ] User cards
   * [ ] Dealer
