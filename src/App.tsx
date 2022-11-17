@@ -25,7 +25,6 @@ const GameBg = styled.div`
 const GamePlace = styled.div`
   width: 1200px;
   height: 800px;
-  background: red;
   z-index: 2;
 `;
 
