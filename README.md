@@ -16,7 +16,7 @@
     * [ ] Customize color in setting
   * [ ] Chair (Seated / Empty) - User information for not empty
   * [ ] User cards
-  * [ ] Dealer
+  * [x] Dealer - With animations
   * [ ] Pot information (Chips image)
   * [ ] Pot cards
   * [ ] Animations

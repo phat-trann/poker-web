@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import TableSection from './TableSection';
+import { Stage } from 'react-konva';
+import Dealer from './Dealer';
 
 const GameSection: React.FC = () => {
   // TODO: Using theme context for setting the table color.
-  const [color, setColor] = useState('#63C6FF');
+  const [color, setColor] = useState('#B9925B');
 
   return (
     <>
@@ -11,9 +13,13 @@ const GameSection: React.FC = () => {
         type="color"
         name=""
         id=""
+        value={color}
         onChange={(e) => setColor(e?.target?.value)}
       />
-      <TableSection themeColor={color} />
+      <Stage width={1200} height={800}>
+        <TableSection themeColor={color} />
+        <Dealer />
+      </Stage>
     </>
   );
 };

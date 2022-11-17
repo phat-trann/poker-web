@@ -1,5 +1,5 @@
 import React from 'react';
-import { Stage, Layer, Ellipse } from 'react-konva';
+import { Layer, Ellipse } from 'react-konva';
 
 /* Function get darken or lighten color */
 const adjustColor = (color: string, percent: number) => {
@@ -21,67 +21,70 @@ const adjustColor = (color: string, percent: number) => {
 
   return `#${RR}${GG}${BB}`;
 };
-const greenHex = '#068117';
+const greenHex = '#096f16';
 const darkGreenHex = adjustColor(greenHex, -25);
 
 const GameSection: React.FC<{ themeColor: string }> = ({ themeColor }) => {
   return (
-    <Stage width={1200} height={800}>
-      <Layer>
-        <Ellipse
-          x={600}
-          y={420}
-          radiusX={450}
-          radiusY={325}
-          fill={adjustColor(themeColor, -70)}
-        />
-        <Ellipse
-          x={600}
-          y={400}
-          radiusX={450}
-          radiusY={325}
-          fillLinearGradientStartPoint={{x: 200, y: 700}}
-          fillLinearGradientEndPoint={{x: 1000, y: 75}}
-          fillLinearGradientColorStops={[0, themeColor, 1, adjustColor(themeColor, 100)]}
-        />
-        <Ellipse
-          x={600}
-          y={400}
-          radiusX={415}
-          radiusY={290}
-          fill={adjustColor(themeColor, -65)}
-        />
-        <Ellipse
-          x={600}
-          y={405}
-          radiusX={410}
-          radiusY={280}
-          fill={darkGreenHex}
-        />
-        <Ellipse
-          x={600}
-          y={405}
-          radiusX={405}
-          radiusY={275}
-          fill={darkGreenHex}
-          shadowColor="black"
-          shadowBlur={20}
-          shadowOpacity={0.3}
-        />
-        <Ellipse
-          x={600}
-          y={405}
-          radiusX={365}
-          radiusY={235}
-          fill={greenHex}
-          stroke={adjustColor(themeColor, 50)}
-          strokeWidth={8}
-          shadowColor="black"
-          shadowBlur={20}
-          shadowOpacity={0.3}
-        />
-      </Layer>
-    </Stage>
+    <Layer>
+      <Ellipse
+        x={600}
+        y={420}
+        radiusX={450}
+        radiusY={325}
+        fill={adjustColor(themeColor, -70)}
+      />
+      <Ellipse
+        x={600}
+        y={400}
+        radiusX={450}
+        radiusY={325}
+        fillLinearGradientStartPoint={{ x: 200, y: 700 }}
+        fillLinearGradientEndPoint={{ x: 1000, y: 75 }}
+        fillLinearGradientColorStops={[
+          0,
+          themeColor,
+          1,
+          adjustColor(themeColor, 100),
+        ]}
+      />
+      <Ellipse
+        x={600}
+        y={400}
+        radiusX={415}
+        radiusY={290}
+        fill={adjustColor(themeColor, -65)}
+      />
+      <Ellipse
+        x={600}
+        y={405}
+        radiusX={410}
+        radiusY={280}
+        fill={darkGreenHex}
+      />
+      <Ellipse
+        x={600}
+        y={405}
+        radiusX={405}
+        radiusY={275}
+        fill={darkGreenHex}
+        shadowColor="black"
+        shadowBlur={20}
+        shadowOpacity={0.3}
+      />
+      <Ellipse
+        x={600}
+        y={405}
+        radiusX={365}
+        radiusY={235}
+        fill={greenHex}
+        stroke={adjustColor(themeColor, 50)}
+        strokeWidth={8}
+        shadowColor="black"
+        shadowBlur={20}
+        shadowOpacity={0.3}
+      />
+    </Layer>
   );
 };
 
