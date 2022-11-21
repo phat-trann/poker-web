@@ -64,7 +64,7 @@ const Dealer = () => {
     const blinkEyesInterval = setInterval(() => {
       blinkEyes(leftEye);
       blinkEyes(rightEye);
-    }, 8000);
+    }, 4000);
 
     return () => clearInterval(blinkEyesInterval);
   }, []);
