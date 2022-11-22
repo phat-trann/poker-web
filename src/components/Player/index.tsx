@@ -1,5 +1,5 @@
 import React from 'react';
-import { Circle, Rect } from 'react-konva';
+import { Circle, Rect, Text } from 'react-konva';
 import useImage from 'use-image';
 
 type PlayerType = {
@@ -10,6 +10,7 @@ type PlayerType = {
   isFocus: boolean;
   x: number;
   y: number;
+  moreInformation?: string;
 };
 
 const Player: React.FC<PlayerType> = ({
@@ -20,6 +21,7 @@ const Player: React.FC<PlayerType> = ({
   isFocus,
   x,
   y,
+  moreInformation = '',
 }) => {
   const [image] = useImage(imageUrl);
 
@@ -27,6 +29,22 @@ const Player: React.FC<PlayerType> = ({
 
   return (
     <>
+      {!isEmpty && moreInformation !== '' && (
+        <>
+          <Rect
+            x={isLeft ? x + 20 : x - 140}
+            y={y + 5}
+            width={!isCenter ? 120 : 160}
+            height={!isCenter ? 50 : 60}
+            cornerRadius={20}
+            fill="#6fb4e9"
+            scale={{ x: isFocus ? 1.2 : 1, y: isFocus ? 1.2 : 1 }}
+            shadowColor="black"
+            shadowBlur={10}
+            shadowOpacity={0.3}
+          />
+        </>
+      )}
       {!isEmpty && (
         <Rect
           x={isLeft ? x : x - 160}
@@ -57,6 +75,15 @@ const Player: React.FC<PlayerType> = ({
         shadowColor="black"
         shadowBlur={10}
         shadowOpacity={0.3}
+      />
+      <Text
+        text={moreInformation}
+        x={isLeft ? x : x - 160}
+        y={isCenter ? y + 45 : y + 35}
+        width={!isCenter ? 160 : 200}
+        align="center"
+        fontSize={16}
+        fill="red"
       />
     </>
   );
