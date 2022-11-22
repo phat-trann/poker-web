@@ -15,8 +15,8 @@
     * [x] Table hard color
     * [x] Customize color
     * [ ] Customize color in setting
-  * [ ] Chair (Seated / Empty) - User information for not empty
-  * [ ] User cards
+  * [x] Chair (Seated / Empty) - User information for not empty
+  * [x] User cards
   * [x] Dealer - With animations
   * [ ] Pot information (Chips image)
   * [ ] Pot cards

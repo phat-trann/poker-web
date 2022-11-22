@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import GameSection from './components/GameSection';
 
 const AppBg = styled.div`
-  background-image: url(/bg.jpg);
+  background-image: url(/images/bg.jpg);
   width: 100vw;
   min-height: 100vh;
   background-size: cover;

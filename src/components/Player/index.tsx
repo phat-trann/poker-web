@@ -1,8 +1,9 @@
 import React from 'react';
 import { Circle, Rect, Text } from 'react-konva';
 import useImage from 'use-image';
+import Card from '../Card';
 
-type PlayerType = {
+interface PlayerType {
   imageUrl?: string;
   isLeft?: boolean;
   isCenter?: boolean;
@@ -12,10 +13,10 @@ type PlayerType = {
   x: number;
   y: number;
   moreInformation?: string;
-};
+}
 
 const Player: React.FC<PlayerType> = ({
-  imageUrl = '/discord-mascot.png',
+  imageUrl = '/images/discord-mascot.png',
   isLeft = true,
   isCenter = false,
   isEmpty,
@@ -31,6 +32,22 @@ const Player: React.FC<PlayerType> = ({
 
   return (
     <>
+      {!isEmpty && !isFold && (
+        <>
+          <Card
+            number={2}
+            type="heart"
+            x={isLeft ? x + 40 : x - 150}
+            y={y - 105}
+          />
+          <Card
+            number={13}
+            type="club"
+            x={isLeft ? x + 70 : x - 120}
+            y={y - 105}
+          />
+        </>
+      )}
       {!isEmpty && moreInformation !== '' && (
         <>
           <Rect
@@ -52,7 +69,6 @@ const Player: React.FC<PlayerType> = ({
             align="center"
             fontSize={16}
             fontStyle="bold"
-            onClick={() => console.log('Hi')}
             fill={isFold ? 'white' : 'black'}
           />
         </>

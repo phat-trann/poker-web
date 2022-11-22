@@ -5,7 +5,7 @@ import Player from '../Player';
 const Players = () => {
   return (
     <Layer>
-      <Player x={250} y={170} isEmpty={true} isFocus={false} isFold={false} />
+      <Player x={250} y={170} isEmpty={false} isFocus={false} isFold={false} />
       <Player x={120} y={370} isEmpty={false} isFocus={false} isFold={true} />
       <Player
         x={180}
