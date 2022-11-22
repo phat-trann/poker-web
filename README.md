@@ -19,7 +19,7 @@
   * [x] User cards
   * [x] Dealer - With animations
   * [ ] Pot information (Chips image)
-  * [ ] Pot cards
+  * [x] Pot cards
   * [ ] Animations
 * Others:
   * [ ]  Tutorial section

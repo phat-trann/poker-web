@@ -7,6 +7,7 @@ interface CardType {
   type: 'club' | 'diamond' | 'heart' | 'spade';
   x: number;
   y: number;
+  isShow: boolean;
 }
 
 const config = {
@@ -25,21 +26,46 @@ const textForNumber: { [key: number]: string } = {
   13: 'K',
 };
 
-const Card: React.FC<CardType> = ({ number, type, x, y }) => {
+const Card: React.FC<CardType> = ({ number, type, x, y, isShow }) => {
   const [image] = useImage(`/images/cards/${type}.jpg`);
-  console.log(image);
+
+  if (!isShow)
+    return (
+      <>
+        <Rect
+          x={x}
+          y={y}
+          width={80}
+          height={109}
+          cornerRadius={10}
+          fill="white"
+          shadowColor="black"
+          shadowBlur={20}
+          shadowOpacity={0.5}
+        />
+        <Rect
+          x={x + 7}
+          y={y + 7}
+          width={66}
+          height={95}
+          cornerRadius={10}
+          fill="#ff505b"
+        />
+      </>
+    );
+
   return number && type ? (
     <>
       <Rect
         x={x}
         y={y}
-        width={400}
-        height={545}
-        cornerRadius={50}
+        width={80}
+        height={109}
+        cornerRadius={10}
         fillPatternImage={image}
-        fillPatternX={400}
-        fillPatternY={545}
-        scale={{ x: 0.2, y: 0.2 }}
+        fillPatternX={80}
+        fillPatternY={109}
+        fillPatternScale={{ x: 0.2, y: 0.2 }}
         shadowColor="black"
         shadowBlur={20}
         shadowOpacity={0.5}
@@ -47,7 +73,7 @@ const Card: React.FC<CardType> = ({ number, type, x, y }) => {
       <Text
         text={textForNumber[number] || number.toString()}
         fontSize={25}
-        x={textForNumber[number] ? x + 8 : x + 10}
+        x={number === 10 ? x + 3 : textForNumber[number] ? x + 8 : x + 10}
         y={y + 5}
         fontStyle="bold"
         fill={config.color[type]}

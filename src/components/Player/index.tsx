@@ -39,12 +39,14 @@ const Player: React.FC<PlayerType> = ({
             type="heart"
             x={isLeft ? x + 40 : x - 150}
             y={y - 105}
+            isShow={isCenter}
           />
           <Card
             number={13}
             type="club"
             x={isLeft ? x + 70 : x - 120}
             y={y - 105}
+            isShow={isCenter}
           />
         </>
       )}
