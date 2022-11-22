@@ -31,7 +31,7 @@ const Dealer = () => {
       face.current.to({
         x: 597,
         duration: 0.2,
-      })
+      });
       clearTimeout(moveEyeRight);
     }, 1000);
     const moveEyeLeft = setTimeout(() => {
@@ -43,7 +43,7 @@ const Dealer = () => {
       face.current.to({
         x: 593,
         duration: 0.3,
-      })
+      });
       clearTimeout(moveEyeLeft);
     }, 2000);
     const moveEyeBack = setTimeout(() => {
@@ -55,7 +55,7 @@ const Dealer = () => {
       face.current.to({
         x: 595,
         duration: 0.2,
-      })
+      });
       clearTimeout(moveEyeBack);
     }, 3000);
   };
@@ -71,7 +71,15 @@ const Dealer = () => {
 
   return (
     <Layer>
-      <Circle x={600} y={75} radius={75} fill="#637dc3" />
+      <Circle
+        x={600}
+        y={75}
+        radius={75}
+        fill="#637dc3"
+        shadowColor="black"
+        shadowBlur={30}
+        shadowOpacity={0.5}
+      />
       <Circle x={600} y={80} radius={60} fill="#0d2344" />
       <Circle x={600} y={77} radius={55} fill="#21365c" />
       <Circle x={595} y={75} radius={45} fill="#28406a" ref={face} />

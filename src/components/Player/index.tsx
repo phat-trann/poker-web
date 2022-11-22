@@ -1,5 +1,5 @@
 import React from 'react';
-import { Circle, Layer, Rect } from 'react-konva';
+import { Circle, Rect } from 'react-konva';
 import useImage from 'use-image';
 
 type PlayerType = {
@@ -36,6 +36,9 @@ const Player: React.FC<PlayerType> = ({
           cornerRadius={50}
           fill="#7ebcec"
           scale={{ x: isFocus ? 1.2 : 1, y: isFocus ? 1.2 : 1 }}
+          shadowColor="black"
+          shadowBlur={10}
+          shadowOpacity={0.3}
         />
       )}
       <Circle
@@ -49,8 +52,11 @@ const Player: React.FC<PlayerType> = ({
           x: 100 / (image?.width || 50),
           y: 100 / (image?.height || 50),
         }}
-        opacity={isEmpty ? 0.7 : 1}
+        opacity={isEmpty ? 0.8 : 1}
         scale={{ x: isFocus ? 1.2 : 1, y: isFocus ? 1.2 : 1 }}
+        shadowColor="black"
+        shadowBlur={10}
+        shadowOpacity={0.3}
       />
     </>
   );
