@@ -5,14 +5,14 @@ import Player from '../Player';
 const Players = () => {
   return (
     <Layer>
-      <Player x={250} y={170} isEmpty={true} isFocus={false} />
-      <Player x={120} y={370} isEmpty={false} isFocus={false} />
+      <Player x={250} y={170} isEmpty={true} isFocus={false} isFold={false} />
+      <Player x={120} y={370} isEmpty={false} isFocus={false} isFold={true} />
       <Player
         x={180}
         y={570}
         isEmpty={false}
         isFocus={false}
-        moreInformation="Fold"
+        isFold={true}
       />
       <Player
         x={525}
@@ -20,7 +20,8 @@ const Players = () => {
         isEmpty={false}
         isFocus={false}
         isCenter={true}
-        moreInformation="Fold r ne"
+        moreInformation="Raise to $270"
+        isFold={false}
       />
       <Player
         x={950}
@@ -28,10 +29,24 @@ const Players = () => {
         isLeft={false}
         isEmpty={false}
         isFocus={false}
-        moreInformation="Fold r ne"
+        isFold={false}
       />
-      <Player x={1080} y={370} isLeft={false} isEmpty={false} isFocus={false} />
-      <Player x={1020} y={570} isLeft={false} isEmpty={false} isFocus={false} />
+      <Player
+        x={1080}
+        y={370}
+        isLeft={false}
+        isEmpty={false}
+        isFocus={false}
+        isFold={false}
+      />
+      <Player
+        x={1020}
+        y={570}
+        isLeft={false}
+        isEmpty={false}
+        isFocus={false}
+        isFold={false}
+      />
     </Layer>
   );
 };

@@ -8,6 +8,7 @@ type PlayerType = {
   isCenter?: boolean;
   isEmpty: boolean;
   isFocus: boolean;
+  isFold: boolean;
   x: number;
   y: number;
   moreInformation?: string;
@@ -19,9 +20,10 @@ const Player: React.FC<PlayerType> = ({
   isCenter = false,
   isEmpty,
   isFocus,
+  isFold = false,
   x,
   y,
-  moreInformation = '',
+  moreInformation = isFold ? 'Fold' : '',
 }) => {
   const [image] = useImage(imageUrl);
 
@@ -36,12 +38,22 @@ const Player: React.FC<PlayerType> = ({
             y={y + 5}
             width={!isCenter ? 120 : 160}
             height={!isCenter ? 50 : 60}
-            cornerRadius={20}
-            fill="#6fb4e9"
-            scale={{ x: isFocus ? 1.2 : 1, y: isFocus ? 1.2 : 1 }}
+            cornerRadius={15}
+            fill={isFold ? '#7c7c7c' : '#6fb4e9'}
             shadowColor="black"
             shadowBlur={10}
             shadowOpacity={0.3}
+          />
+          <Text
+            text={moreInformation}
+            x={isLeft ? x : x - 160}
+            y={isCenter ? y + 45 : y + 35}
+            width={!isCenter ? 160 : 200}
+            align="center"
+            fontSize={16}
+            fontStyle="bold"
+            onClick={() => console.log('Hi')}
+            fill={isFold ? 'white' : 'black'}
           />
         </>
       )}
@@ -52,8 +64,7 @@ const Player: React.FC<PlayerType> = ({
           width={!isCenter ? 160 : 200}
           height={!isCenter ? 60 : 70}
           cornerRadius={50}
-          fill="#7ebcec"
-          scale={{ x: isFocus ? 1.2 : 1, y: isFocus ? 1.2 : 1 }}
+          fill={isFold ? '#9f9f9f' : '#7ebcec'}
           shadowColor="black"
           shadowBlur={10}
           shadowOpacity={0.3}
@@ -75,15 +86,6 @@ const Player: React.FC<PlayerType> = ({
         shadowColor="black"
         shadowBlur={10}
         shadowOpacity={0.3}
-      />
-      <Text
-        text={moreInformation}
-        x={isLeft ? x : x - 160}
-        y={isCenter ? y + 45 : y + 35}
-        width={!isCenter ? 160 : 200}
-        align="center"
-        fontSize={16}
-        fill="red"
       />
     </>
   );
